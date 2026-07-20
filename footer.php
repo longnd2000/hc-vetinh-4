@@ -35,14 +35,14 @@ $footer_col_4_links = (function_exists('get_field') && get_field('footer_col_4_l
                         <ul class="text-sm">
                             <?php if(!empty($footer_col_2_links)): ?>
                                 <?php foreach($footer_col_2_links as $link): ?>
-                                    <li><a href="<?php echo esc_url($link['url']); ?>" class="block py-2 hover:text-gold duration-300"><?php echo esc_html($link['title']); ?></a></li>
+                                    <li><a href="<?php echo esc_url($link['url']); ?>" class="block hover:text-gold duration-300" style="padding: 12px 0;"><?php echo esc_html($link['title']); ?></a></li>
                                 <?php endforeach; ?>
                             <?php else: ?>
-                                <li><a href="#" class="block py-2 hover:text-gold duration-300">Showroom Home Care</a></li>
-                                <li><a href="#" class="block py-2 hover:text-gold duration-300">Feedback khách hàng</a></li>
-                                <li><a href="#" class="block py-2 hover:text-gold duration-300">Dấu ấn Home Care</a></li>
-                                <li><a href="#" class="block py-2 hover:text-gold duration-300">Trung tâm ở cữ</a></li>
-                                <li><a href="#" class="block py-2 hover:text-gold duration-300">Sản phẩm Home Care</a></li>
+                                <li><a href="#" class="block hover:text-gold duration-300" style="padding: 12px 0;">Showroom Home Care</a></li>
+                                <li><a href="#" class="block hover:text-gold duration-300" style="padding: 12px 0;">Feedback khách hàng</a></li>
+                                <li><a href="#" class="block hover:text-gold duration-300" style="padding: 12px 0;">Dấu ấn Home Care</a></li>
+                                <li><a href="#" class="block hover:text-gold duration-300" style="padding: 12px 0;">Trung tâm ở cữ</a></li>
+                                <li><a href="#" class="block hover:text-gold duration-300" style="padding: 12px 0;">Sản phẩm Home Care</a></li>
                             <?php endif; ?>
                         </ul>
                     </div>
@@ -51,15 +51,15 @@ $footer_col_4_links = (function_exists('get_field') && get_field('footer_col_4_l
                         <ul class="text-sm">
                             <?php if(!empty($footer_col_3_links)): ?>
                                 <?php foreach($footer_col_3_links as $link): ?>
-                                    <li><a href="<?php echo esc_url($link['url']); ?>" class="block py-2 hover:text-gold duration-300"><?php echo esc_html($link['title']); ?></a></li>
+                                    <li><a href="<?php echo esc_url($link['url']); ?>" class="block hover:text-gold duration-300" style="padding: 12px 0;"><?php echo esc_html($link['title']); ?></a></li>
                                 <?php endforeach; ?>
                             <?php else: ?>
-                                <li><a href="#" class="block py-2 hover:text-gold duration-300">Chính sách mua hàng</a></li>
-                                <li><a href="#" class="block py-2 hover:text-gold duration-300">Chính sách thanh toán</a></li>
-                                <li><a href="#" class="block py-2 hover:text-gold duration-300">Chính sách đổi trả</a></li>
-                                <li><a href="#" class="block py-2 hover:text-gold duration-300">Chính sách vận chuyển</a></li>
-                                <li><a href="#" class="block py-2 hover:text-gold duration-300">Chính sách bảo hành</a></li>
-                                <li><a href="#" class="block py-2 hover:text-gold duration-300">Chính sách bảo mật</a></li>
+                                <li><a href="#" class="block hover:text-gold duration-300" style="padding: 12px 0;">Chính sách mua hàng</a></li>
+                                <li><a href="#" class="block hover:text-gold duration-300" style="padding: 12px 0;">Chính sách thanh toán</a></li>
+                                <li><a href="#" class="block hover:text-gold duration-300" style="padding: 12px 0;">Chính sách đổi trả</a></li>
+                                <li><a href="#" class="block hover:text-gold duration-300" style="padding: 12px 0;">Chính sách vận chuyển</a></li>
+                                <li><a href="#" class="block hover:text-gold duration-300" style="padding: 12px 0;">Chính sách bảo hành</a></li>
+                                <li><a href="#" class="block hover:text-gold duration-300" style="padding: 12px 0;">Chính sách bảo mật</a></li>
                             <?php endif; ?>
                         </ul>
                     </div>
@@ -68,14 +68,14 @@ $footer_col_4_links = (function_exists('get_field') && get_field('footer_col_4_l
                         <ul class="text-sm">
                             <?php if(!empty($footer_col_4_links)): ?>
                                 <?php foreach($footer_col_4_links as $link): ?>
-                                    <li><a href="<?php echo esc_url($link['url']); ?>" class="block py-2 hover:text-gold duration-300"><?php echo esc_html($link['title']); ?></a></li>
+                                    <li><a href="<?php echo esc_url($link['url']); ?>" class="block hover:text-gold duration-300" style="padding: 12px 0;"><?php echo esc_html($link['title']); ?></a></li>
                                 <?php endforeach; ?>
                             <?php else: ?>
-                                <li><a href="#" class="block py-2 hover:text-gold duration-300">Massage tắm bé tại nhà</a></li>
-                                <li><a href="#" class="block py-2 hover:text-gold duration-300">Massage bầu tại nhà</a></li>
-                                <li><a href="#" class="block py-2 hover:text-gold duration-300">Thông tắc tia sữa tại nhà</a></li>
-                                <li><a href="#" class="block py-2 hover:text-gold duration-300">Chăm sóc sau sinh mẹ bé</a></li>
-                                <li><a href="#" class="block py-2 hover:text-gold duration-300">Giảm eo sau sinh</a></li>
+                                <li><a href="#" class="block hover:text-gold duration-300" style="padding: 12px 0;">Massage tắm bé tại nhà</a></li>
+                                <li><a href="#" class="block hover:text-gold duration-300" style="padding: 12px 0;">Massage bầu tại nhà</a></li>
+                                <li><a href="#" class="block hover:text-gold duration-300" style="padding: 12px 0;">Thông tắc tia sữa tại nhà</a></li>
+                                <li><a href="#" class="block hover:text-gold duration-300" style="padding: 12px 0;">Chăm sóc sau sinh mẹ bé</a></li>
+                                <li><a href="#" class="block hover:text-gold duration-300" style="padding: 12px 0;">Giảm eo sau sinh</a></li>
                             <?php endif; ?>
                         </ul>
                         <div class="mt-6 flex gap-4">
