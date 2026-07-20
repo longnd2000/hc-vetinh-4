@@ -13,7 +13,7 @@ function blenheim_theme_scripts() {
     wp_enqueue_style('slick-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css', array(), '1.9.0');
     
     // Theme styles
-    wp_enqueue_style('blenheim-os-theme', get_template_directory_uri() . '/css/os-theme-thin-dark.css', array(), '1.0.0');
+    // wp_enqueue_style('blenheim-os-theme', get_template_directory_uri() . '/css/os-theme-thin-dark.css', array(), '1.0.0');
     wp_enqueue_style('blenheim-style', get_stylesheet_uri(), array(), '12.0.0');
 
     // Scripts

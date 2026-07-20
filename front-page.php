@@ -48,7 +48,7 @@
                         <img src="<?php echo esc_url($post_img); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-0 left-0 w-full h-full object-cover" <?php if( $blog_query->current_post === 0 ) { echo 'fetchpriority="high" decoding="sync"'; } else { echo 'loading="lazy" decoding="async"'; } ?> />
                     </a>
                     <a class="pt-6 block" href="<?php the_permalink(); ?>">
-                        <h4 class="text-left text-lg"><?php the_title(); ?></h4>
+                        <h2 class="text-left text-lg font-bold"><?php the_title(); ?></h2>
                         <p class="text-base max-w-[85%] mt-3 mb-6 line-clamp-2 mobile:mb-4"><?php echo wp_trim_words(get_the_excerpt(), 25, '...'); ?></p>
                         <span class="underlineLink">Xem thêm</span>
                     </a>

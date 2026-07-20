@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?> class="blog windows antialiased overflow-x-hidden">
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
@@ -21,9 +21,9 @@
 </head>
 <?php 
 $front_page_id = get_option('page_on_front') ? get_option('page_on_front') : get_option('page_for_posts');
-$header_phone = (function_exists('get_field') && get_field('header_phone', $front_page_id)) ? get_field('header_phone', $front_page_id) : '+44 (0)114 358 2020';
+$header_phone = (function_exists('get_field') && get_field('header_phone', $front_page_id)) ? get_field('header_phone', $front_page_id) : '0962131515';
 $header_phone_clean = preg_replace('/[^0-9+]/', '', $header_phone);
-$footer_email = (function_exists('get_field') && get_field('footer_email', $front_page_id)) ? get_field('footer_email', $front_page_id) : 'enquiries@blenheim.co.uk';
+$footer_email = (function_exists('get_field') && get_field('footer_email', $front_page_id)) ? get_field('footer_email', $front_page_id) : 'cskh@homegroups.vn';
 ?>
 <body id="page_blog" <?php body_class(); ?>>
     <header class="py-8 bg-green mobile:py-5 absolute w-full top-0 hide stuck inView mobile:!py-7 darkHeader">
@@ -64,7 +64,7 @@ $footer_email = (function_exists('get_field') && get_field('footer_email', $fron
                     $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
                     echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="block w-full"><img src="' . esc_url( $logo[0] ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" class="w-auto mx-auto object-contain" style="max-height: 60px;" /></a>';
                 } else {
-                    echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="text-white text-2xl font-bold uppercase no-underline">' . get_bloginfo( 'name' ) . '</a>';
+                    echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="text-dark text-2xl font-bold uppercase no-underline" style="color: #333;">' . get_bloginfo( 'name' ) . '</a>';
                 }
                 ?>
             </div>
@@ -81,7 +81,7 @@ $footer_email = (function_exists('get_field') && get_field('footer_email', $fron
                     </li>
                     <?php endif; ?>
                     <li class="mobile:!hidden">
-                        <a href="/contact" class="">Liên hệ</a>
+                        <a href="tel:<?php echo esc_attr($header_phone_clean); ?>" class="">Liên hệ</a>
                     </li>
                     <li class="!hidden mobile:!inline-block">
                         <a href="tel:<?php echo esc_attr($header_phone_clean); ?>" class="" aria-label="Call us">
@@ -92,7 +92,7 @@ $footer_email = (function_exists('get_field') && get_field('footer_email', $fron
             </div>
         </div>
     </header>
-    <div class="overlayNav fixed top-0 left-0 w-full h-full bg-green opacity-0 invisible z-40 transition-opacity duration-300 cover" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/mega-menu.webp');">
+    <div class="overlayNav fixed top-0 left-0 w-full h-full bg-green opacity-0 invisible z-40 transition-opacity duration-300 cover">
         <button aria-label="Close menu" class="menuToggle fixed top-[73px] !top-[49px] left-16 laptop:left-10 medium:left-8 bg-transparent h-12 w-12 align-top z-50 cursor-pointer group -mt-7 mobile:-mt-0.5 mobile:!top-4 mobile:left-5 border-none"> 
             <div class="menuI topI w-6 h-[1px] bg-white absolute top-5"></div>
             <div class="menuI bottomI w-6 h-[1px] bg-white absolute top-7"></div>
