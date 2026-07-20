@@ -16,6 +16,20 @@
         gtag('config', 'G-332PZCQERN');
         gtag('config', 'AW-11405717892');
     </script>
+    
+    <?php
+    $meta_desc = '';
+    if (is_single() || is_page()) {
+        $meta_desc = wp_strip_all_tags(get_the_excerpt());
+    }
+    if (empty($meta_desc)) {
+        $meta_desc = get_bloginfo('description');
+    }
+    if (empty($meta_desc)) {
+        $meta_desc = get_bloginfo('name') . ' - Dịch vụ chăm sóc sức khỏe chuyên nghiệp, tận tâm.';
+    }
+    ?>
+    <meta name="description" content="<?php echo esc_attr(trim($meta_desc)); ?>" />
 
     <?php wp_head(); ?>
 </head>
