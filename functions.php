@@ -25,7 +25,7 @@ function blenheim_theme_scripts() {
     wp_enqueue_script('cookieyes', 'https://cdn-cookieyes.com/client_data/713d9362df39974af52bf3a1/script.js', array(), null, true);
     
     // Custom JS
-    wp_enqueue_script('blenheim-js', get_template_directory_uri() . '/js/javascript.js', array('jquery', 'lenis', 'overlayscrollbars-js', 'slick-carousel-js'), '12.0.0', true);
+    // wp_enqueue_script('blenheim-js', get_template_directory_uri() . '/js/javascript.js', array('jquery', 'lenis', 'overlayscrollbars-js', 'slick-carousel-js'), '12.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'blenheim_theme_scripts');
 
@@ -361,7 +361,7 @@ add_action( 'get_footer', function() {
 // 1. Thêm thuộc tính defer cho tất cả các script để tránh chặn render
 function hc_defer_scripts( $tag, $handle, $src ) {
     // Các script không nên defer (nếu có)
-    $exclude = array( 'jquery-core' );
+    $exclude = array( 'jquery', 'jquery-core', 'jquery-migrate' );
     if ( in_array( $handle, $exclude ) ) {
         return $tag;
     }

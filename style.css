@@ -5412,45 +5412,6 @@ header.transparentHeader .form textarea .menu li a:not(.button)::after {
   max-width: 100%;
 }
 
-@font-face {
-  font-family: "title";
-
-  src: url("../fonts/PPHatton-Light.woff") format("woff"); font-display: swap;
-
-  font-weight: normal;
-
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "title-italic";
-
-  src: url("../fonts/PPHatton-UltralightItalic.woff") format("woff"); font-display: swap;
-
-  font-weight: normal;
-
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "text";
-
-  src: url("../fonts/RivieraNights-Regular-WebXL.woff") format("woff"); font-display: swap;
-
-  font-weight: normal;
-
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "light";
-
-  src: url("../fonts/RivieraNights-Light-WebXL.woff") format("woff"); font-display: swap;
-
-  font-weight: normal;
-
-  font-style: normal;
-}
 
 @keyframes fadeIn {
   0% {
