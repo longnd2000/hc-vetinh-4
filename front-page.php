@@ -45,7 +45,7 @@
                 ?>
                 <div class="col-span-6 fade-in pb-28 mobile:col-span-full mobile:pb-14">
                     <a href="<?php the_permalink(); ?>" class="cover block relative after:pb-[67.5%] after:block after:content-[''] overflow-hidden" aria-label="<?php echo esc_attr(get_the_title()); ?>">
-                        <img src="<?php echo esc_url($post_img); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-0 left-0 w-full h-full object-cover" <?php if( $blog_query->current_post === 0 ) { echo 'fetchpriority="high" decoding="sync"'; } else { echo 'loading="lazy" decoding="async"'; } ?> />
+                        <img src="<?php echo esc_url($post_img); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-0 left-0 w-full h-full object-cover<?php echo ($blog_query->current_post === 0) ? ' skip-lazy' : ''; ?>" <?php if( $blog_query->current_post === 0 ) { echo 'fetchpriority="high" decoding="sync" data-no-lazy="1" data-skip-lazy="1"'; } else { echo 'loading="lazy" decoding="async"'; } ?> />
                     </a>
                     <a class="pt-6 block" href="<?php the_permalink(); ?>">
                         <h2 class="text-left text-lg font-bold"><?php the_title(); ?></h2>
@@ -69,17 +69,17 @@
     $cta_1_title = (function_exists('get_field') && get_field('cta_1_title', $page_for_posts_id)) ? get_field('cta_1_title', $page_for_posts_id) : 'Bạn muốn <em class="font-italic">Mua</em><br />nhà?';
     $cta_1_link = (function_exists('get_field') && get_field('cta_1_link', $page_for_posts_id)) ? get_field('cta_1_link', $page_for_posts_id) : '/buy';
     $cta_1_text = (function_exists('get_field') && get_field('cta_1_text', $page_for_posts_id)) ? get_field('cta_1_text', $page_for_posts_id) : 'Khám phá ngay';
-    $cta_1_img = (function_exists('get_field') && get_field('cta_1_image', $page_for_posts_id)) ? (is_array(get_field('cta_1_image', $page_for_posts_id)) ? get_field('cta_1_image', $page_for_posts_id)['url'] : get_field('cta_1_image', $page_for_posts_id)) : 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop';
+    $cta_1_img = (function_exists('get_field') && get_field('cta_1_image', $page_for_posts_id)) ? (is_array(get_field('cta_1_image', $page_for_posts_id)) ? get_field('cta_1_image', $page_for_posts_id)['url'] : get_field('cta_1_image', $page_for_posts_id)) : 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop';
     
     $cta_2_title = (function_exists('get_field') && get_field('cta_2_title', $page_for_posts_id)) ? get_field('cta_2_title', $page_for_posts_id) : 'Bạn muốn <em class="font-italic">Bán</em><br />nhà?';
     $cta_2_link = (function_exists('get_field') && get_field('cta_2_link', $page_for_posts_id)) ? get_field('cta_2_link', $page_for_posts_id) : '/request-a-valuation';
     $cta_2_text = (function_exists('get_field') && get_field('cta_2_text', $page_for_posts_id)) ? get_field('cta_2_text', $page_for_posts_id) : 'Yêu cầu định giá';
-    $cta_2_img = (function_exists('get_field') && get_field('cta_2_image', $page_for_posts_id)) ? (is_array(get_field('cta_2_image', $page_for_posts_id)) ? get_field('cta_2_image', $page_for_posts_id)['url'] : get_field('cta_2_image', $page_for_posts_id)) : 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2000&auto=format&fit=crop';
+    $cta_2_img = (function_exists('get_field') && get_field('cta_2_image', $page_for_posts_id)) ? (is_array(get_field('cta_2_image', $page_for_posts_id)) ? get_field('cta_2_image', $page_for_posts_id)['url'] : get_field('cta_2_image', $page_for_posts_id)) : 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop';
     
     $cta_3_title = (function_exists('get_field') && get_field('cta_3_title', $page_for_posts_id)) ? get_field('cta_3_title', $page_for_posts_id) : 'Bạn muốn <em class="font-italic">Xây</em><br />nhà?';
     $cta_3_link = (function_exists('get_field') && get_field('cta_3_link', $page_for_posts_id)) ? get_field('cta_3_link', $page_for_posts_id) : '/build-and-developments#contact';
     $cta_3_text = (function_exists('get_field') && get_field('cta_3_text', $page_for_posts_id)) ? get_field('cta_3_text', $page_for_posts_id) : 'Đặt lịch tư vấn';
-    $cta_3_img = (function_exists('get_field') && get_field('cta_3_image', $page_for_posts_id)) ? (is_array(get_field('cta_3_image', $page_for_posts_id)) ? get_field('cta_3_image', $page_for_posts_id)['url'] : get_field('cta_3_image', $page_for_posts_id)) : 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2000&auto=format&fit=crop';
+    $cta_3_img = (function_exists('get_field') && get_field('cta_3_image', $page_for_posts_id)) ? (is_array(get_field('cta_3_image', $page_for_posts_id)) ? get_field('cta_3_image', $page_for_posts_id)['url'] : get_field('cta_3_image', $page_for_posts_id)) : 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop';
     ?>
     <div class="full-grid gap-0 relative z-0 text-white">
         <div class="col-span-4 mobile:col-span-full">
