@@ -355,4 +355,31 @@ add_action( 'get_footer', function() {
         remove_all_actions( 'get_footer' );
     }
 }, 1 );
+
+// --- TỐI ƯU HÓA HIỆU SUẤT (LIGHTHOUSE) ---
+
+// 1. Thêm thuộc tính defer cho tất cả các script để tránh chặn render
+function hc_defer_scripts( $tag, $handle, $src ) {
+    // Các script không nên defer (nếu có)
+    $exclude = array( 'jquery-core' );
+    if ( in_array( $handle, $exclude ) ) {
+        return $tag;
+    }
+    // Nếu script đã có defer hoặc async thì bỏ qua
+    if ( strpos( $tag, 'defer' ) !== false || strpos( $tag, 'async' ) !== false ) {
+        return $tag;
+    }
+    return str_replace( ' src', ' defer="defer" src', $tag );
+}
+add_filter( 'script_loader_tag', 'hc_defer_scripts', 10, 3 );
+
+// 2. Xóa query strings khỏi CSS và JS để tăng khả năng cache
+function hc_remove_script_version( $src ){
+    if ( strpos( $src, '?ver=' ) )
+        $src = remove_query_arg( 'ver', $src );
+    return $src;
+}
+add_filter( 'style_loader_src', 'hc_remove_script_version', 15, 1 );
+add_filter( 'script_loader_src', 'hc_remove_script_version', 15, 1 );
+
 ?>

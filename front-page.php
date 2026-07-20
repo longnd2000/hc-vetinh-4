@@ -44,7 +44,9 @@
                     $post_img = (function_exists('get_field') && get_field('article_image')) ? (is_array(get_field('article_image')) ? get_field('article_image')['url'] : get_field('article_image')) : (has_post_thumbnail() ? get_the_post_thumbnail_url(null, 'full') : 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop');
                 ?>
                 <div class="col-span-6 fade-in pb-28 mobile:col-span-full mobile:pb-14">
-                    <a href="<?php the_permalink(); ?>" class="cover block relative after:pb-[67.5%] after:block after:content-[''] after:bg-cover" style="background-image:url('<?php echo esc_url($post_img); ?>');" aria-label="<?php echo esc_attr(get_the_title()); ?>"></a>
+                    <a href="<?php the_permalink(); ?>" class="cover block relative after:pb-[67.5%] after:block after:content-[''] overflow-hidden" aria-label="<?php echo esc_attr(get_the_title()); ?>">
+                        <img src="<?php echo esc_url($post_img); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-0 left-0 w-full h-full object-cover" <?php if( $blog_query->current_post === 0 ) { echo 'fetchpriority="high" decoding="sync"'; } else { echo 'loading="lazy" decoding="async"'; } ?> />
+                    </a>
                     <a class="pt-6 block" href="<?php the_permalink(); ?>">
                         <h4 class="text-left text-lg"><?php the_title(); ?></h4>
                         <p class="text-base max-w-[85%] mt-3 mb-6 line-clamp-2 mobile:mb-4"><?php echo wp_trim_words(get_the_excerpt(), 25, '...'); ?></p>
