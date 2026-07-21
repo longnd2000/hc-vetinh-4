@@ -3,9 +3,14 @@
 <section class="bg-cream text-dark">
     <div class="wrapper">
         <div class="full-grid">
+            <?php
+            $page_for_posts_id = get_option('page_for_posts');
+            $hero_title = (function_exists('get_field') && get_field('blog_title', $page_for_posts_id)) ? get_field('blog_title', $page_for_posts_id) : '<span class="font-italic">Cẩm nang</span> Mẹ & Bé';
+            $hero_desc = (function_exists('get_field') && get_field('blog_description', $page_for_posts_id)) ? get_field('blog_description', $page_for_posts_id) : 'Chia sẻ những kiến thức hữu ích về chăm sóc mẹ sau sinh, dịch vụ tắm bé sơ sinh và kinh nghiệm nuôi con khoa học.';
+            ?>
             <div class="col-span-full text-center pt-48 fade-in mobile:pt-28">
-                <h1 class=""><?php the_archive_title(); ?></h1>
-                <div class="max-w-[640px] mx-auto block mt-10 opacity-80 mobile:mt-5"><?php the_archive_description(); ?></div>
+                <h1 class=""><?php echo $hero_title; ?></h1>
+                <div class="max-w-[640px] mx-auto block mt-10 opacity-80 mobile:mt-5"><?php echo $hero_desc; ?></div>
             </div>
         </div>
     </div>
@@ -54,7 +59,11 @@
 
     <div class="bg-cream text-dark">
         <div class="wrapper">
-            <div class="full-grid pt-24 mobile:pt-12 gap-x-16 medium:gap-x-12 pb-10 mobile:gap-x-0 mobile:pb-2">
+            <div class="pt-24 pb-8 border-b border-gray-200 mobile:pt-12 mobile:pb-4 mb-10 mobile:mb-6">
+                <h2 class="text-3xl font-bold uppercase text-center"><?php echo single_term_title('', false); ?></h2>
+                <div class="text-center mt-2 opacity-80"><?php the_archive_description(); ?></div>
+            </div>
+            <div class="full-grid gap-x-16 medium:gap-x-12 pb-10 mobile:gap-x-0 mobile:pb-2">
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <?php
                 global $wp_query;

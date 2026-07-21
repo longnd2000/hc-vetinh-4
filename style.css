@@ -7011,3 +7011,12 @@ header.transparentHeader .form textarea .menu li a:not(.button)::after {
 }
 
 body { font-family: 'Nunito', sans-serif !important; }
+
+@media (max-width: 1023px) {
+  .mobile\:w-full { width: 100% !important; }
+  .mobile\:block { display: block !important; }
+  .mobile\:pr-0 { padding-right: 0 !important; }
+  .mobile\:pl-0 { padding-left: 0 !important; }
+  .mobile\:mt-10 { margin-top: 2.5rem !important; }
+  .mobile\:col-span-full { grid-column: 1 / -1 !important; }
+}
