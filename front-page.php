@@ -45,7 +45,7 @@
                 ?>
                 <div class="col-span-6 fade-in pb-28 mobile:col-span-full mobile:pb-14">
                     <a href="<?php the_permalink(); ?>" class="cover block relative after:pb-[67.5%] after:block after:content-[''] overflow-hidden" aria-label="<?php echo esc_attr(get_the_title()); ?>">
-                        <img src="<?php echo esc_url($post_img); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-0 left-0 w-full h-full object-cover<?php echo ($blog_query->current_post === 0) ? ' skip-lazy' : ''; ?>" <?php if( $blog_query->current_post === 0 ) { echo 'fetchpriority="high" decoding="sync" data-no-lazy="1" data-skip-lazy="1"'; } else { echo 'loading="lazy" decoding="async"'; } ?> />
+                        <img src="<?php echo esc_url($post_img, array('http', 'https', 'data')); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-0 left-0 w-full h-full object-cover<?php echo ($blog_query->current_post === 0) ? ' skip-lazy' : ''; ?>" <?php if( $blog_query->current_post === 0 ) { echo 'fetchpriority="high" decoding="sync" data-no-lazy="1" data-skip-lazy="1"'; } else { echo 'loading="lazy" decoding="async"'; } ?> />
                     </a>
                     <a class="pt-6 block" href="<?php the_permalink(); ?>">
                         <h2 class="text-left text-lg font-bold"><?php the_title(); ?></h2>
@@ -83,7 +83,7 @@
     ?>
     <div class="full-grid gap-0 relative z-0 text-white">
         <div class="col-span-4 mobile:col-span-full">
-            <a href="<?php echo esc_url($cta_1_link); ?>" class="relative block cover group after:content-[''] after:block after:pb-[100%] mobile:max-h-[260px] mobile:overflow-hidden" style="background-image:url('<?php echo esc_url($cta_1_img); ?>');">
+            <a href="<?php echo esc_url($cta_1_link); ?>" class="relative block cover group after:content-[''] after:block after:pb-[100%] mobile:max-h-[260px] mobile:overflow-hidden" style="background-image:url('<?php echo esc_url($cta_1_img, array('http', 'https', 'data')); ?>');">
                 <div class="overlay bg-black opacity-40 z-20 top-0 left-0 w-full h-full absolute group-hover:opacity-30 duration-500 transition-opacity"></div>
                 <div class="text text-center center z-30 w-full">
                     <h3 class="mb-12 mobile:h2 mobile:mb-6"><?php echo $cta_1_title; ?></h3>
@@ -92,7 +92,7 @@
             </a>
         </div>
         <div class="col-span-4 mobile:col-span-full">
-            <a href="<?php echo esc_url($cta_2_link); ?>" class="relative block cover group after:content-[''] after:block after:pb-[100%] mobile:max-h-[260px] mobile:overflow-hidden" style="background-image:url('<?php echo esc_url($cta_2_img); ?>');">
+            <a href="<?php echo esc_url($cta_2_link); ?>" class="relative block cover group after:content-[''] after:block after:pb-[100%] mobile:max-h-[260px] mobile:overflow-hidden" style="background-image:url('<?php echo esc_url($cta_2_img, array('http', 'https', 'data')); ?>');">
                 <div class="overlay bg-black opacity-40 z-20 top-0 left-0 w-full h-full absolute group-hover:opacity-30 duration-500 transition-opacity"></div>
                 <div class="text text-center center z-30 w-full">
                     <h3 class="mb-12 mobile:h2 mobile:mb-6"><?php echo $cta_2_title; ?></h3>
@@ -101,7 +101,7 @@
             </a>
         </div>
         <div class="col-span-4 mobile:col-span-full">
-            <a href="<?php echo esc_url($cta_3_link); ?>" class="relative block cover group after:content-[''] after:block after:pb-[100%] mobile:max-h-[260px] mobile:overflow-hidden" style="background-image:url('<?php echo esc_url($cta_3_img); ?>');">
+            <a href="<?php echo esc_url($cta_3_link); ?>" class="relative block cover group after:content-[''] after:block after:pb-[100%] mobile:max-h-[260px] mobile:overflow-hidden" style="background-image:url('<?php echo esc_url($cta_3_img, array('http', 'https', 'data')); ?>');">
                 <div class="overlay bg-black opacity-40 z-20 top-0 left-0 w-full h-full absolute group-hover:opacity-30 duration-500 transition-opacity"></div>
                 <div class="text text-center center z-30 w-full">
                     <h3 class="mb-12 mobile:h2 mobile:mb-6"><?php echo $cta_3_title; ?></h3>
