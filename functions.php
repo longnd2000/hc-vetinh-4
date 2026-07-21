@@ -485,4 +485,17 @@ function hc_custom_global_fonts() {
 }
 add_action( 'wp_head', 'hc_custom_global_fonts', 100 );
 add_action( 'admin_head', 'hc_custom_global_fonts', 100 );
+
+// --- THÊM BẢO MẬT & FIX CÁC CẢNH BÁO PAGE SPEED ---
+function hc_add_security_headers() {
+    if ( !is_admin() ) {
+        // Fix HTTP mixed content (fonts) & XSS DOM (Trusted Types)
+        header("Content-Security-Policy: upgrade-insecure-requests; require-trusted-types-for 'script';");
+        // Fix HSTS
+        header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload");
+        // Fix COOP
+        header("Cross-Origin-Opener-Policy: same-origin");
+    }
+}
+add_action('send_headers', 'hc_add_security_headers');
 ?>
