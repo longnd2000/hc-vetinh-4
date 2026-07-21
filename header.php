@@ -90,37 +90,71 @@ $footer_email = (function_exists('get_field') && get_field('footer_email', $fron
         <div class="oneNav h-full level1 bg-green fixed z-40 top-0 left-0 w-[40%] mobile:w-full">
             <div class="navList py-36 block wrapper mobile:py-28">
                 <ul>
-                    <?php
-                    $all_categories = get_terms( array(
-                        'taxonomy' => 'category',
-                        'hide_empty' => true
-                    ) );
-                    if ( ! empty( $all_categories ) && ! is_wp_error( $all_categories ) ) {
-                        foreach ( $all_categories as $cat ) {
-                            echo '<li><a href="' . esc_url( get_term_link( $cat ) ) . '" class="navLink">' . esc_html( $cat->name ) . '</a></li>';
-                        }
-                    }
-                    ?>
+                    <li><a href="#" class="navLink" data-nav="buy-and-sell">Chăm sóc Mẹ &amp; Bé</a></li>
+                    <li><a href="#" class="navLink" data-nav="build-and-developments">Sản phẩm Mẹ &amp; Bé</a></li>
+                    <li><a href="#" class="navLink" data-nav="architecture-and-design">Kiến thức - Cẩm nang</a></li>
+                    <li><a href="#" class="navLink" data-nav="about">Về chúng tôi</a></li>
                 </ul>
                 <script>
                     document.addEventListener('DOMContentLoaded', function() {
                         var toggles = document.querySelectorAll('.menuToggle');
                         var overlay = document.querySelector('.overlayNav');
+                        var level2 = document.querySelector('.oneNav.level2');
+                        var navLinks = document.querySelectorAll('.navLink');
+                        var subNavs = document.querySelectorAll('.subNav');
+                        var closeLevel2 = document.querySelector('.closeLevel2');
+
                         if (toggles.length && overlay) {
                             toggles.forEach(function(toggle) {
                                 toggle.addEventListener('click', function(e) {
                                     e.preventDefault();
                                     if (overlay.classList.contains('opacity-0')) {
                                         overlay.classList.remove('opacity-0', 'invisible');
+                                        overlay.classList.add('navOpen');
+                                        if (level2) level2.classList.remove('open');
                                     } else {
                                         overlay.classList.add('opacity-0', 'invisible');
+                                        overlay.classList.remove('navOpen');
+                                        if (level2) level2.classList.remove('open');
                                     }
                                 });
                             });
                             overlay.addEventListener('click', function(e) {
                                 if (e.target === overlay) {
                                     overlay.classList.add('opacity-0', 'invisible');
+                                    overlay.classList.remove('navOpen');
+                                    if (level2) level2.classList.remove('open');
                                 }
+                            });
+                        }
+
+                        if (navLinks.length && level2) {
+                            navLinks.forEach(function(link) {
+                                ['mouseenter', 'click'].forEach(function(evt) {
+                                    link.addEventListener(evt, function(e) {
+                                        if (evt === 'click') e.preventDefault();
+                                        var target = link.getAttribute('data-nav');
+                                        if (!target) return;
+                                        
+                                        subNavs.forEach(function(nav) {
+                                            nav.style.display = 'none';
+                                        });
+                                        
+                                        var targetNav = document.querySelector('.subNav[data-list="' + target + '"]');
+                                        if (targetNav) {
+                                            targetNav.style.display = 'block';
+                                        }
+                                        
+                                        level2.classList.add('open');
+                                    });
+                                });
+                            });
+                        }
+
+                        if (closeLevel2 && level2) {
+                            closeLevel2.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                level2.classList.remove('open');
                             });
                         }
                     });
