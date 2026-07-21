@@ -87,7 +87,7 @@ $footer_email = (function_exists('get_field') && get_field('footer_email', $fron
             <div class="menuI topI w-6 h-[1px] bg-white absolute top-5"></div>
             <div class="menuI bottomI w-6 h-[1px] bg-white absolute top-7"></div>
         </button>
-        <div class="oneNav h-full level1 bg-green fixed z-40 top-0 left-0 w-1/3 min-w-[420px] mobile:w-full">
+        <div class="oneNav h-full level1 bg-green fixed z-40 top-0 left-0 w-[30%] mobile:w-full">
             <div class="navList py-36 block wrapper mobile:py-28">
                 <ul>
                     <?php
