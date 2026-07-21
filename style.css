@@ -4589,11 +4589,11 @@ header.darkHeader .menuToggle .menuI {
 .oneNav.level2 {
   position: fixed;
   top: 0px;
-  left: 0px;
+  left: 40%;
   z-index: 30;
   display: none;
   height: 100%;
-  width: 33.333333%;
+  width: 40%;
   min-width: 420px;
   --tw-bg-opacity: 1;
   background-color: rgb(26 49 47 / var(--tw-bg-opacity, 1));
@@ -4607,6 +4607,7 @@ header.darkHeader .menuToggle .menuI {
   .oneNav.level2 {
     z-index: 40;
     width: 100%;
+    left: 0px;
     --tw-translate-x: -100%;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y))
       rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
