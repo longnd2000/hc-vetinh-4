@@ -90,19 +90,36 @@ $footer_email = (function_exists('get_field') && get_field('footer_email', $fron
         <div class="oneNav h-full level1 bg-green fixed z-40 top-0 left-0 w-1/3 min-w-[420px] mobile:w-full">
             <div class="navList py-36 block wrapper mobile:py-28">
                 <ul>
-                    <li>
-                        <a href="#" class="navLink" data-nav="buy-and-sell">Mua &amp; Bán</a>
-                    </li>
-                    <li>
-                        <a href="#" class="navLink" data-nav="build-and-developments">Xây dựng &amp; Phát triển</a>
-                    </li>
-                    <li>
-                        <a href="#" class="navLink" data-nav="architecture-and-design">Thiết kế &amp; Kiến trúc</a>
-                    </li>
-                    <li>
-                        <a href="#" class="navLink" data-nav="about">Về chúng tôi</a>
-                    </li>
+                    <?php
+                    $all_categories = get_terms( array(
+                        'taxonomy' => 'category',
+                        'hide_empty' => true
+                    ) );
+                    if ( ! empty( $all_categories ) && ! is_wp_error( $all_categories ) ) {
+                        foreach ( $all_categories as $cat ) {
+                            echo '<li><a href="' . esc_url( get_term_link( $cat ) ) . '" class="navLink">' . esc_html( $cat->name ) . '</a></li>';
+                        }
+                    }
+                    ?>
                 </ul>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        var toggles = document.querySelectorAll('.menuToggle');
+                        var overlay = document.querySelector('.overlayNav');
+                        if (toggles.length && overlay) {
+                            toggles.forEach(function(toggle) {
+                                toggle.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    if (overlay.classList.contains('opacity-0')) {
+                                        overlay.classList.remove('opacity-0', 'invisible');
+                                    } else {
+                                        overlay.classList.add('opacity-0', 'invisible');
+                                    }
+                                });
+                            });
+                        }
+                    });
+                </script>
             </div>
             <div class="bottomNav absolute bottom-14 px-16 mobile:bottom-10 mobile:left-5 mobile:px-0">
                 <div class="">
