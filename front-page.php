@@ -43,7 +43,10 @@
                 if ($blog_query->have_posts()) : while ($blog_query->have_posts()) : $blog_query->the_post(); 
                     $post_img = (function_exists('get_field') && get_field('article_image')) ? (is_array(get_field('article_image')) ? get_field('article_image')['url'] : get_field('article_image')) : (has_post_thumbnail() ? get_the_post_thumbnail_url(null, 'full') : 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
                 ?>
-                <div class="col-span-6 fade-in pb-28 mobile:col-span-full mobile:pb-14">
+                <?php 
+                    $col_class = ($blog_query->current_post < 2) ? 'col-span-6' : 'col-span-4';
+                ?>
+                <div class="<?php echo $col_class; ?> fade-in pb-28 mobile:col-span-full mobile:pb-14">
                     <a href="<?php the_permalink(); ?>" class="cover block relative after:pb-[67.5%] after:block after:content-[''] overflow-hidden" aria-label="<?php echo esc_attr(get_the_title()); ?>">
                         <img src="<?php echo esc_url($post_img, array('http', 'https', 'data')); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-0 left-0 w-full h-full object-cover<?php echo ($blog_query->current_post === 0) ? ' skip-lazy' : ''; ?>" <?php if( $blog_query->current_post === 0 ) { echo 'fetchpriority="high" decoding="sync" data-no-lazy="1" data-skip-lazy="1"'; } else { echo 'loading="lazy" decoding="async"'; } ?> />
                     </a>
