@@ -64,6 +64,15 @@ if( function_exists('acf_add_local_field_group') ):
                 'post_type' => array('post'),
                 'return_format' => 'id',
             ),
+            array(
+                'key' => 'field_featured_categories',
+                'label' => 'Chọn danh mục nổi bật (hiển thị ở đầu trang)',
+                'name' => 'featured_categories',
+                'type' => 'taxonomy',
+                'taxonomy' => 'category',
+                'field_type' => 'multi_select',
+                'return_format' => 'object',
+            ),
             // CTA 1
             array(
                 'key' => 'field_cta_1_title',
