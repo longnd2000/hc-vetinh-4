@@ -360,6 +360,11 @@ add_action( 'get_footer', function() {
 
 // 1. Thêm thuộc tính defer cho tất cả các script để tránh chặn render
 function hc_defer_scripts( $tag, $handle, $src ) {
+    // Không can thiệp vào các script trong trang quản trị (wp-admin) để tránh lỗi Editor và Plugin (như Yoast)
+    if ( is_admin() ) {
+        return $tag;
+    }
+    
     // Các script không nên defer (nếu có)
     $exclude = array( 'jquery', 'jquery-core', 'jquery-migrate' );
     if ( in_array( $handle, $exclude ) ) {
