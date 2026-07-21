@@ -82,7 +82,7 @@ $footer_email = (function_exists('get_field') && get_field('footer_email', $fron
             </div>
         </div>
     </header>
-    <div class="overlayNav fixed top-0 left-0 w-full h-full bg-green opacity-0 invisible z-40 transition-opacity duration-300 cover">
+    <div class="overlayNav fixed top-0 left-0 w-full h-full bg-black bg-opacity-60 opacity-0 invisible z-40 transition-opacity duration-300">
         <button aria-label="Close menu" class="menuToggle fixed top-[73px] !top-[49px] left-16 laptop:left-10 medium:left-8 bg-transparent h-12 w-12 align-top z-50 cursor-pointer group -mt-7 mobile:-mt-0.5 mobile:!top-4 mobile:left-5 border-none"> 
             <div class="menuI topI w-6 h-[1px] bg-white absolute top-5"></div>
             <div class="menuI bottomI w-6 h-[1px] bg-white absolute top-7"></div>
@@ -116,6 +116,11 @@ $footer_email = (function_exists('get_field') && get_field('footer_email', $fron
                                         overlay.classList.add('opacity-0', 'invisible');
                                     }
                                 });
+                            });
+                            overlay.addEventListener('click', function(e) {
+                                if (e.target === overlay) {
+                                    overlay.classList.add('opacity-0', 'invisible');
+                                }
                             });
                         }
                     });

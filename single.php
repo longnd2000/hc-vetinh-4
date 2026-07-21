@@ -20,7 +20,7 @@
 
     <div class="wrapper">
         <div class="pb-32 text-[0] tablet:pb-20">
-            <div class="textContent text-base inline-block align-top pr-10 mobile:block mobile:pr-0" style="width: 70%;">
+            <div class="textContent text-base inline-block align-top pr-10 mobile:block mobile:pr-0 w-[70%] mobile:w-full">
                 <?php 
                 $single_img = (function_exists('get_field') && get_field('article_image')) ? (is_array(get_field('article_image')) ? get_field('article_image')['url'] : get_field('article_image')) : (has_post_thumbnail() ? get_the_post_thumbnail_url(null, 'full') : false);
                 if ($single_img) : 
@@ -38,7 +38,7 @@
                 }
                 ?>
             </div>
-            <div class="sidebar text-base inline-block align-top pl-10 mobile:block mobile:pl-0 mobile:mt-10" style="width: 30%;">
+            <div class="sidebar text-base inline-block align-top pl-10 mobile:block mobile:pl-0 mobile:mt-10 w-[30%] mobile:w-full">
                 <h4 class="pb-2">Bài viết liên quan</h4>
                 <?php
                 // Simple related posts by category logic
