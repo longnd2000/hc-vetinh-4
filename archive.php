@@ -10,6 +10,33 @@
         </div>
     </div>
 
+    <?php
+    $categories = get_categories(array('number' => 3, 'hide_empty' => true));
+    if (!empty($categories)):
+    ?>
+    <div class="full-grid gap-0 relative z-0 text-white mt-10">
+        <?php foreach ($categories as $cat): 
+            $cat_img = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+            if (function_exists('get_field')) {
+                $acf_img = get_field('category_image', $cat);
+                if ($acf_img) {
+                    $cat_img = is_array($acf_img) ? $acf_img['url'] : $acf_img;
+                }
+            }
+        ?>
+        <div class="col-span-4 mobile:col-span-full">
+            <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="relative block cover group after:content-[''] after:block after:pb-[100%] mobile:max-h-[260px] mobile:overflow-hidden" style="background-image:url('<?php echo esc_url($cat_img, array('http', 'https', 'data')); ?>');">
+                <div class="overlay bg-black opacity-40 z-20 top-0 left-0 w-full h-full absolute group-hover:opacity-30 duration-500 transition-opacity"></div>
+                <div class="text text-center center z-30 w-full">
+                    <h3 class="mb-12 mobile:h2 mobile:mb-6"><?php echo esc_html($cat->name); ?></h3>
+                    <span class="underlineLink mx-auto">Xem bài viết</span>
+                </div>
+            </a>
+        </div>
+        <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
+
     <div class="bg-cream text-dark">
         <div class="wrapper">
             <div class="full-grid pt-24 mobile:pt-12 gap-x-16 medium:gap-x-12 pb-10 mobile:gap-x-0 mobile:pb-2">
@@ -36,52 +63,7 @@
         </div>
     </div>
     
-    <?php
-    $front_page_id = get_option('page_on_front') ? get_option('page_on_front') : get_option('page_for_posts');
-    $cta_1_title = (function_exists('get_field') && get_field('cta_1_title', $front_page_id)) ? get_field('cta_1_title', $front_page_id) : 'Dịch vụ <em class="font-italic">Tắm bé</em>';
-    $cta_1_link = (function_exists('get_field') && get_field('cta_1_link', $front_page_id)) ? get_field('cta_1_link', $front_page_id) : '#';
-    $cta_1_text = (function_exists('get_field') && get_field('cta_1_text', $front_page_id)) ? get_field('cta_1_text', $front_page_id) : 'Tìm hiểu thêm';
-    $cta_1_img = (function_exists('get_field') && get_field('cta_1_image', $front_page_id)) ? (is_array(get_field('cta_1_image', $front_page_id)) ? get_field('cta_1_image', $front_page_id)['url'] : get_field('cta_1_image', $front_page_id)) : 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-    
-    $cta_2_title = (function_exists('get_field') && get_field('cta_2_title', $front_page_id)) ? get_field('cta_2_title', $front_page_id) : 'Chăm sóc <em class="font-italic">Mẹ sau sinh</em>';
-    $cta_2_link = (function_exists('get_field') && get_field('cta_2_link', $front_page_id)) ? get_field('cta_2_link', $front_page_id) : '#';
-    $cta_2_text = (function_exists('get_field') && get_field('cta_2_text', $front_page_id)) ? get_field('cta_2_text', $front_page_id) : 'Xem chi tiết';
-    $cta_2_img = (function_exists('get_field') && get_field('cta_2_image', $front_page_id)) ? (is_array(get_field('cta_2_image', $front_page_id)) ? get_field('cta_2_image', $front_page_id)['url'] : get_field('cta_2_image', $front_page_id)) : 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-    
-    $cta_3_title = (function_exists('get_field') && get_field('cta_3_title', $front_page_id)) ? get_field('cta_3_title', $front_page_id) : 'Thông tắc <em class="font-italic">Tia sữa</em>';
-    $cta_3_link = (function_exists('get_field') && get_field('cta_3_link', $front_page_id)) ? get_field('cta_3_link', $front_page_id) : '#';
-    $cta_3_text = (function_exists('get_field') && get_field('cta_3_text', $front_page_id)) ? get_field('cta_3_text', $front_page_id) : 'Đặt lịch ngay';
-    $cta_3_img = (function_exists('get_field') && get_field('cta_3_image', $front_page_id)) ? (is_array(get_field('cta_3_image', $front_page_id)) ? get_field('cta_3_image', $front_page_id)['url'] : get_field('cta_3_image', $front_page_id)) : 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-    ?>
-    <div class="full-grid gap-0 relative z-0 text-white">
-        <div class="col-span-4 mobile:col-span-full">
-            <a href="<?php echo esc_url($cta_1_link); ?>" class="relative block cover group after:content-[''] after:block after:pb-[100%] mobile:max-h-[260px] mobile:overflow-hidden" style="background-image:url('<?php echo esc_url($cta_1_img); ?>');">
-                <div class="overlay bg-black opacity-40 z-20 top-0 left-0 w-full h-full absolute group-hover:opacity-30 duration-500 transition-opacity"></div>
-                <div class="text text-center center z-30 w-full">
-                    <h3 class="mb-12 mobile:h2 mobile:mb-6"><?php echo $cta_1_title; ?></h3>
-                    <span class="underlineLink mx-auto"><?php echo $cta_1_text; ?></span>
-                </div>
-            </a>
-        </div>
-        <div class="col-span-4 mobile:col-span-full">
-            <a href="<?php echo esc_url($cta_2_link); ?>" class="relative block cover group after:content-[''] after:block after:pb-[100%] mobile:max-h-[260px] mobile:overflow-hidden" style="background-image:url('<?php echo esc_url($cta_2_img); ?>');">
-                <div class="overlay bg-black opacity-40 z-20 top-0 left-0 w-full h-full absolute group-hover:opacity-30 duration-500 transition-opacity"></div>
-                <div class="text text-center center z-30 w-full">
-                    <h3 class="mb-12 mobile:h2 mobile:mb-6"><?php echo $cta_2_title; ?></h3>
-                    <span class="underlineLink mx-auto"><?php echo $cta_2_text; ?></span>
-                </div>
-            </a>
-        </div>
-        <div class="col-span-4 mobile:col-span-full">
-            <a href="<?php echo esc_url($cta_3_link); ?>" class="relative block cover group after:content-[''] after:block after:pb-[100%] mobile:max-h-[260px] mobile:overflow-hidden" style="background-image:url('<?php echo esc_url($cta_3_img); ?>');">
-                <div class="overlay bg-black opacity-40 z-20 top-0 left-0 w-full h-full absolute group-hover:opacity-30 duration-500 transition-opacity"></div>
-                <div class="text text-center center z-30 w-full">
-                    <h3 class="mb-12 mobile:h2 mobile:mb-6"><?php echo $cta_3_title; ?></h3>
-                    <span class="underlineLink mx-auto"><?php echo $cta_3_text; ?></span>
-                </div>
-            </a>
-        </div>
-    </div>
+
 </section>
 </main>
 <?php get_footer(); ?>
