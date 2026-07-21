@@ -15,20 +15,21 @@
                 <?php endif; ?>
             </div>
 
-            <?php 
-            $single_img = (function_exists('get_field') && get_field('article_image')) ? (is_array(get_field('article_image')) ? get_field('article_image')['url'] : get_field('article_image')) : (has_post_thumbnail() ? get_the_post_thumbnail_url(null, 'full') : false);
-            if ($single_img) : 
-            ?>
-            <div class="col-span-full fade-in pb-20 tablet:pb-12">
-                <img src="<?php echo esc_url($single_img); ?>" alt="<?php the_title_attribute(); ?>" class="w-full" width="1200" height="675" loading="lazy" />
-            </div>
-            <?php endif; ?>
         </div>
     </div>
 
     <div class="wrapper">
         <div class="pb-32 text-[0] tablet:pb-20">
             <div class="textContent text-base inline-block align-top pr-10 mobile:block mobile:pr-0" style="width: 70%;">
+                <?php 
+                $single_img = (function_exists('get_field') && get_field('article_image')) ? (is_array(get_field('article_image')) ? get_field('article_image')['url'] : get_field('article_image')) : (has_post_thumbnail() ? get_the_post_thumbnail_url(null, 'full') : false);
+                if ($single_img) : 
+                ?>
+                <div class="fade-in pb-10 mobile:pb-6">
+                    <img src="<?php echo esc_url($single_img); ?>" alt="<?php the_title_attribute(); ?>" class="w-full rounded-sm" width="1200" height="675" loading="lazy" />
+                </div>
+                <?php endif; ?>
+
                 <?php 
                 if (function_exists('get_field') && get_field('article_content')) {
                     echo apply_filters('the_content', get_field('article_content'));
