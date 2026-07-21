@@ -16,7 +16,22 @@
     </div>
 
     <?php
-    $categories = get_categories(array('number' => 3, 'hide_empty' => true));
+    $front_page_id = get_option('page_on_front') ? get_option('page_on_front') : get_option('page_for_posts');
+    $featured_categories = (function_exists('get_field') && get_field('featured_categories', $front_page_id)) ? get_field('featured_categories', $front_page_id) : false;
+    $categories = array();
+    
+    if ($featured_categories && is_array($featured_categories)) {
+        foreach ($featured_categories as $cat_val) {
+            if (is_object($cat_val)) {
+                $categories[] = $cat_val;
+            } elseif (is_numeric($cat_val)) {
+                $categories[] = get_term($cat_val, 'category');
+            }
+        }
+    } else {
+        $categories = get_categories(array('number' => 3, 'hide_empty' => true));
+    }
+    
     if (!empty($categories)):
     ?>
     <div class="full-grid gap-0 relative z-0 text-white mt-10">
