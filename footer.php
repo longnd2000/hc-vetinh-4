@@ -31,7 +31,7 @@ $footer_col_4_links = (function_exists('get_field') && get_field('footer_col_4_l
                         <?php echo wp_kses_post($footer_col_1_info); ?>
                     </div>
                     <div class="col-span-2 mobile:col-span-full mobile:pb-10">
-                        <span class="text-white text-lg mb-6 mobile:mb-4 inline-block font-bold">Về Homecare</span>
+                        <span class="text-white text-lg mb-6 mobile:mb-4 inline-block font-bold"><?php echo (function_exists('get_field') && get_field('footer_col_2_title', $front_page_id)) ? get_field('footer_col_2_title', $front_page_id) : 'Về Homecare'; ?></span>
                         <ul class="text-sm">
                             <?php if(!empty($footer_col_2_links)): ?>
                                 <?php foreach($footer_col_2_links as $link): ?>
@@ -47,7 +47,7 @@ $footer_col_4_links = (function_exists('get_field') && get_field('footer_col_4_l
                         </ul>
                     </div>
                     <div class="col-span-3 mobile:col-span-full mobile:pb-10">
-                        <span class="text-white text-lg mb-6 mobile:mb-4 inline-block font-bold">Chính sách &amp; điều khoản</span>
+                        <span class="text-white text-lg mb-6 mobile:mb-4 inline-block font-bold"><?php echo (function_exists('get_field') && get_field('footer_col_3_title', $front_page_id)) ? get_field('footer_col_3_title', $front_page_id) : 'Chính sách &amp; điều khoản'; ?></span>
                         <ul class="text-sm">
                             <?php if(!empty($footer_col_3_links)): ?>
                                 <?php foreach($footer_col_3_links as $link): ?>
@@ -64,7 +64,7 @@ $footer_col_4_links = (function_exists('get_field') && get_field('footer_col_4_l
                         </ul>
                     </div>
                     <div class="col-span-2 mobile:col-span-full mobile:pb-10">
-                        <span class="text-white text-lg mb-6 mobile:mb-4 inline-block font-bold">Liên kết nhanh</span>
+                        <span class="text-white text-lg mb-6 mobile:mb-4 inline-block font-bold"><?php echo (function_exists('get_field') && get_field('footer_col_4_title', $front_page_id)) ? get_field('footer_col_4_title', $front_page_id) : 'Liên kết nhanh'; ?></span>
                         <ul class="text-sm">
                             <?php if(!empty($footer_col_4_links)): ?>
                                 <?php foreach($footer_col_4_links as $link): ?>

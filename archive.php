@@ -38,20 +38,20 @@
     
     <?php
     $page_for_posts_id = get_option('page_for_posts');
-    $cta_1_title = (function_exists('get_field') && get_field('cta_1_title', $page_for_posts_id)) ? get_field('cta_1_title', $page_for_posts_id) : 'Bạn muốn <em class="font-italic">Mua</em><br />nhà?';
-    $cta_1_link = (function_exists('get_field') && get_field('cta_1_link', $page_for_posts_id)) ? get_field('cta_1_link', $page_for_posts_id) : '/buy';
-    $cta_1_text = (function_exists('get_field') && get_field('cta_1_text', $page_for_posts_id)) ? get_field('cta_1_text', $page_for_posts_id) : 'Khám phá ngay';
-    $cta_1_img = (function_exists('get_field') && get_field('cta_1_image', $page_for_posts_id)) ? (is_array(get_field('cta_1_image', $page_for_posts_id)) ? get_field('cta_1_image', $page_for_posts_id)['url'] : get_field('cta_1_image', $page_for_posts_id)) : 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop';
+    $cta_1_title = (function_exists('get_field') && get_field('cta_1_title', $page_for_posts_id)) ? get_field('cta_1_title', $page_for_posts_id) : 'Dịch vụ <em class="font-italic">Tắm bé</em>';
+    $cta_1_link = (function_exists('get_field') && get_field('cta_1_link', $page_for_posts_id)) ? get_field('cta_1_link', $page_for_posts_id) : '#';
+    $cta_1_text = (function_exists('get_field') && get_field('cta_1_text', $page_for_posts_id)) ? get_field('cta_1_text', $page_for_posts_id) : 'Tìm hiểu thêm';
+    $cta_1_img = (function_exists('get_field') && get_field('cta_1_image', $page_for_posts_id)) ? (is_array(get_field('cta_1_image', $page_for_posts_id)) ? get_field('cta_1_image', $page_for_posts_id)['url'] : get_field('cta_1_image', $page_for_posts_id)) : 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
     
-    $cta_2_title = (function_exists('get_field') && get_field('cta_2_title', $page_for_posts_id)) ? get_field('cta_2_title', $page_for_posts_id) : 'Bạn muốn <em class="font-italic">Bán</em><br />nhà?';
-    $cta_2_link = (function_exists('get_field') && get_field('cta_2_link', $page_for_posts_id)) ? get_field('cta_2_link', $page_for_posts_id) : '/request-a-valuation';
-    $cta_2_text = (function_exists('get_field') && get_field('cta_2_text', $page_for_posts_id)) ? get_field('cta_2_text', $page_for_posts_id) : 'Yêu cầu định giá';
-    $cta_2_img = (function_exists('get_field') && get_field('cta_2_image', $page_for_posts_id)) ? (is_array(get_field('cta_2_image', $page_for_posts_id)) ? get_field('cta_2_image', $page_for_posts_id)['url'] : get_field('cta_2_image', $page_for_posts_id)) : 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2000&auto=format&fit=crop';
+    $cta_2_title = (function_exists('get_field') && get_field('cta_2_title', $page_for_posts_id)) ? get_field('cta_2_title', $page_for_posts_id) : 'Chăm sóc <em class="font-italic">Mẹ sau sinh</em>';
+    $cta_2_link = (function_exists('get_field') && get_field('cta_2_link', $page_for_posts_id)) ? get_field('cta_2_link', $page_for_posts_id) : '#';
+    $cta_2_text = (function_exists('get_field') && get_field('cta_2_text', $page_for_posts_id)) ? get_field('cta_2_text', $page_for_posts_id) : 'Xem chi tiết';
+    $cta_2_img = (function_exists('get_field') && get_field('cta_2_image', $page_for_posts_id)) ? (is_array(get_field('cta_2_image', $page_for_posts_id)) ? get_field('cta_2_image', $page_for_posts_id)['url'] : get_field('cta_2_image', $page_for_posts_id)) : 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
     
-    $cta_3_title = (function_exists('get_field') && get_field('cta_3_title', $page_for_posts_id)) ? get_field('cta_3_title', $page_for_posts_id) : 'Bạn muốn <em class="font-italic">Xây</em><br />nhà?';
-    $cta_3_link = (function_exists('get_field') && get_field('cta_3_link', $page_for_posts_id)) ? get_field('cta_3_link', $page_for_posts_id) : '/build-and-developments#contact';
-    $cta_3_text = (function_exists('get_field') && get_field('cta_3_text', $page_for_posts_id)) ? get_field('cta_3_text', $page_for_posts_id) : 'Đặt lịch tư vấn';
-    $cta_3_img = (function_exists('get_field') && get_field('cta_3_image', $page_for_posts_id)) ? (is_array(get_field('cta_3_image', $page_for_posts_id)) ? get_field('cta_3_image', $page_for_posts_id)['url'] : get_field('cta_3_image', $page_for_posts_id)) : 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2000&auto=format&fit=crop';
+    $cta_3_title = (function_exists('get_field') && get_field('cta_3_title', $page_for_posts_id)) ? get_field('cta_3_title', $page_for_posts_id) : 'Thông tắc <em class="font-italic">Tia sữa</em>';
+    $cta_3_link = (function_exists('get_field') && get_field('cta_3_link', $page_for_posts_id)) ? get_field('cta_3_link', $page_for_posts_id) : '#';
+    $cta_3_text = (function_exists('get_field') && get_field('cta_3_text', $page_for_posts_id)) ? get_field('cta_3_text', $page_for_posts_id) : 'Đặt lịch ngay';
+    $cta_3_img = (function_exists('get_field') && get_field('cta_3_image', $page_for_posts_id)) ? (is_array(get_field('cta_3_image', $page_for_posts_id)) ? get_field('cta_3_image', $page_for_posts_id)['url'] : get_field('cta_3_image', $page_for_posts_id)) : 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
     ?>
     <div class="full-grid gap-0 relative z-0 text-white">
         <div class="col-span-4 mobile:col-span-full">
