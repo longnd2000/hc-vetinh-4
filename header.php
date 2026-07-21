@@ -49,10 +49,10 @@ $footer_email = (function_exists('get_field') && get_field('footer_email', $fron
             </div>
             <div class="middle w-[180px] mobile:w-[140px] inline-block align-middle text-center">
                 <?php
-                if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
-                    $custom_logo_id = get_theme_mod( 'custom_logo' );
-                    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                    echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="block w-full"><img src="' . esc_url( $logo[0] ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" class="w-auto mx-auto object-contain" style="max-height: 60px;" /></a>';
+                $site_logo = (function_exists('get_field') && get_field('site_logo', $front_page_id)) ? get_field('site_logo', $front_page_id) : false;
+                if ( $site_logo ) {
+                    $logo_url = is_array($site_logo) ? $site_logo['url'] : $site_logo;
+                    echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="block w-full"><img src="' . esc_url( $logo_url ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" class="w-auto mx-auto object-contain" style="max-height: 60px;" /></a>';
                 } else {
                     echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="text-dark text-2xl font-bold uppercase no-underline" style="color: #333;">' . get_bloginfo( 'name' ) . '</a>';
                 }

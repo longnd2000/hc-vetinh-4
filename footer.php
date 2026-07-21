@@ -7,7 +7,7 @@ $footer_email = (function_exists('get_field') && get_field('footer_email', $fron
 $social_facebook = (function_exists('get_field') && get_field('social_facebook', $front_page_id)) ? get_field('social_facebook', $front_page_id) : 'https://www.facebook.com/BlenheimProperties';
 $social_instagram = (function_exists('get_field') && get_field('social_instagram', $front_page_id)) ? get_field('social_instagram', $front_page_id) : 'https://instagram.com/blenheimhomesland/';
 $social_linkedin = (function_exists('get_field') && get_field('social_linkedin', $front_page_id)) ? get_field('social_linkedin', $front_page_id) : 'https://www.linkedin.com/company/blenheim-property/';
-$footer_copyright = (function_exists('get_field') && get_field('footer_copyright', $front_page_id)) ? get_field('footer_copyright', $front_page_id) : '&copy; 2026 BP Estates 12592062 | BP Developments 04969547';
+$footer_copyright = (function_exists('get_field') && get_field('footer_copyright', $front_page_id)) ? get_field('footer_copyright', $front_page_id) : '&copy; ' . date('Y') . ' ' . get_bloginfo('name') . ' - All rights reserved';
 
 $footer_col_1_info = (function_exists('get_field') && get_field('footer_col_1_info', $front_page_id)) ? get_field('footer_col_1_info', $front_page_id) : '<p class="font-bold mb-4 uppercase text-base">CÔNG TY TNHH CHĂM SÓC MẸ VÀ BÉ TẠI NHÀ HOME CARE</p><p class="mb-2">Địa chỉ: 20 Huy Du, Phường Từ Liêm, TP Hà Nội, Việt Nam.</p><p class="mb-2">Tổng đài hỗ trợ: 1900 0387</p><p class="mb-2">Hotline: 0973871376 - 0962131515</p><p class="mb-2">Email: cskh@homegroups.vn</p><p class="mb-2">Mã số doanh nghiệp: 0107375668 do Sở Kế hoạch &amp; Đầu tư TP Hà Nội cấp lần đầu ngày 29/03/2016</p>';
 $footer_col_2_links = (function_exists('get_field') && get_field('footer_col_2_links', $front_page_id)) ? get_field('footer_col_2_links', $front_page_id) : array();
@@ -20,10 +20,10 @@ $footer_col_4_links = (function_exists('get_field') && get_field('footer_col_4_l
                 <div class="full-grid pt-20 pb-16 footerLists mobile:pt-16 text-white text-sm">
                     <div class="col-span-5 mobile:col-span-full mobile:pb-10 pr-4">
                         <?php
-                        if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
-                            $custom_logo_id = get_theme_mod( 'custom_logo' );
-                            $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                            echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="block mb-6"><img src="' . esc_url( $logo[0] ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" class="w-auto object-contain" style="max-height: 80px;" /></a>';
+                        $site_logo = (function_exists('get_field') && get_field('site_logo', $front_page_id)) ? get_field('site_logo', $front_page_id) : false;
+                        if ( $site_logo ) {
+                            $logo_url = is_array($site_logo) ? $site_logo['url'] : $site_logo;
+                            echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="block mb-6"><img src="' . esc_url( $logo_url ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" class="w-auto object-contain" style="max-height: 80px;" /></a>';
                         } else {
                             echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="text-white text-3xl font-bold uppercase no-underline mb-6 block">' . get_bloginfo( 'name' ) . '</a>';
                         }
