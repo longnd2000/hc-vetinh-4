@@ -457,4 +457,41 @@ function hc_duplicate_post_as_draft() {
     }
 }
 add_action( 'admin_action_hc_duplicate_post_as_draft', 'hc_duplicate_post_as_draft' );
+// --- TÙY CHỈNH FONT CHỮ TOÀN TRANG (GLOBAL FONT) ---
+function hc_customize_register_fonts( $wp_customize ) {
+    $wp_customize->add_section( 'hc_typography_section' , array(
+        'title'      => 'Tùy chỉnh Font chữ (Toàn trang)',
+        'priority'   => 30,
+    ) );
+    
+    $wp_customize->add_setting( 'hc_primary_font' , array(
+        'default'   => 'system-ui, -apple-system, sans-serif',
+        'transport' => 'refresh',
+    ) );
+    
+    $wp_customize->add_control( 'hc_primary_font_control', array(
+        'label'      => 'Nhập tên Font chữ (VD: Arial, sans-serif)',
+        'section'    => 'hc_typography_section',
+        'settings'   => 'hc_primary_font',
+        'type'       => 'text',
+        'description' => 'Font này sẽ ghi đè lên toàn bộ font mặc định của website.'
+    ) );
+}
+add_action( 'customize_register', 'hc_customize_register_fonts' );
+
+function hc_custom_global_fonts() {
+    $font = get_theme_mod( 'hc_primary_font', 'system-ui, -apple-system, sans-serif' );
+    if ( ! empty( $font ) ) {
+        echo "<style type='text/css' id='hc-global-font'>
+            :root {
+                --global-font: {$font} !important;
+            }
+            body, h1, h2, h3, h4, h5, h6, p, a, span, div, li, td, th, input, button, textarea, select {
+                font-family: var(--global-font) !important;
+            }
+        </style>";
+    }
+}
+add_action( 'wp_head', 'hc_custom_global_fonts', 100 );
+add_action( 'admin_head', 'hc_custom_global_fonts', 100 );
 ?>
