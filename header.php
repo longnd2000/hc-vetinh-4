@@ -143,77 +143,62 @@ $footer_email = (function_exists('get_field') && get_field('footer_email', $fron
             <div class="navList top-40 mobile:top-36 mt-3 block wrapper relative">
                 <ul class="subNav" data-list="buy-and-sell">
                     <li>
-                        <a href="/homes-and-land" class="subnavTitle">Nhà &amp; Đất</a>
+                        <a href="/cham-soc-me-be" class="subnavTitle">Chăm sóc Mẹ &amp; Bé</a>
                     </li>
                     <li>
-                        <a href="/buy" class="subnavLink">Tìm kiếm Bất động sản</a>
+                        <a href="/tam-be" class="subnavLink">Tắm bé sơ sinh</a>
                     </li>
                     <li>
-                        <a href="/sell" class="subnavLink">Bán cùng Blenheim</a>
+                        <a href="/cham-soc-me" class="subnavLink">Chăm sóc mẹ sau sinh</a>
                     </li>
                     <li>
-                        <a href="/buy-with-blenheim" class="subnavLink">Mua cùng Blenheim</a>
+                        <a href="/thong-tac-tia-sua" class="subnavLink">Thông tắc tia sữa</a>
                     </li>
                     <li>
-                        <a href="/request-a-valuation" class="subnavLink">Yêu cầu Định giá</a>
+                        <a href="/bao-mau" class="subnavLink">Bảo mẫu tại nhà</a>
                     </li>
                     <li>
-                        <a href="/land" class="subnavLink">Mua Đất</a>
+                        <a href="/massage-bau" class="subnavLink">Massage bầu</a>
                     </li>
                     <li>
-                        <a href="/area-guides" class="subnavLink">Hướng dẫn Khu vực</a>
+                        <a href="/boi-thuy-lieu" class="subnavLink">Bơi thủy liệu cho bé</a>
                     </li>
                     <li>
-                        <a href="/mortgage-calculator" class="subnavLink">Tính toán Thế chấp</a>
-                    </li>
-                    <li>
-                        <a href="/private-listings" class="subnavLink">Danh sách Riêng tư</a>
-                    </li>
-                    <li>
-                        <a href="/sell-with-a-private-listing" class="subnavLink">Bán Riêng tư</a>
+                        <a href="/kham-nhi" class="subnavLink">Khám nhi tại nhà</a>
                     </li>
                 </ul>
                 <ul class="subNav" data-list="build-and-developments">
                     <li>
-                        <a href="/build-and-developments" class="subnavTitle">Xây dựng &amp; Phát triển</a>
+                        <a href="/san-pham" class="subnavTitle">Sản phẩm Mẹ &amp; Bé</a>
                     </li>
                     <li>
-                        <a href="/build-and-developments" class="subnavLink">Xây dựng &amp; Phát triển</a>
-                    </li>
-                    <li>
-                        <a href="/build-and-developments/home-builds" class="subnavLink">Xây Nhà</a>
+                        <a href="/do-so-sinh" class="subnavLink">Đồ sơ sinh</a>
                     </li>            
                     <li>
-                        <a href="/build-and-developments/developments" class="subnavLink">Dự án</a>
+                        <a href="/sua-thuc-pham" class="subnavLink">Sữa và thực phẩm</a>
                     </li>            
                     <li>
-                        <a href="/build-and-developments/construction" class="subnavLink">Thi công</a>
+                        <a href="/bim-ta" class="subnavLink">Bỉm tã</a>
                     </li>            
                     <li>
-                        <a href="/build-and-developments/landscaping" class="subnavLink">Cảnh quan</a>
-                    </li>
-                    <li>
-                        <a href="/projects" class="subnavLink">Dự án đã hoàn thành</a>
+                        <a href="/vitamin" class="subnavLink">Vitamin &amp; TPCN</a>
                     </li>
                 </ul>
                 <ul class="subNav" data-list="architecture-and-design">
                     <li>
-                        <a href="/design-and-architecture" class="subnavTitle">Thiết kế &amp; Kiến trúc</a>
+                        <a href="/kien-thuc" class="subnavTitle">Kiến thức - Cẩm nang</a>
                     </li>
                     <li>
-                        <a href="/design-and-architecture" class="subnavLink">Thiết kế &amp; Kiến trúc</a>
-                    </li>
-                    <li>
-                        <a href="/design-and-architecture/architecture" class="subnavLink">Kiến trúc</a>
+                        <a href="/goc-cua-me" class="subnavLink">Góc của Mẹ</a>
                     </li>            
                     <li>
-                        <a href="/design-and-architecture/interior-design" class="subnavLink">Thiết kế Nội thất</a>
+                        <a href="/nuoi-con-khoa-hoc" class="subnavLink">Nuôi con khoa học</a>
                     </li>            
                     <li>
-                        <a href="/design-and-architecture/planning-permission" class="subnavLink">Giấy phép Xây dựng</a>
+                        <a href="/benh-thuong-gap" class="subnavLink">Bệnh thường gặp ở trẻ</a>
                     </li>
                     <li>
-                        <a href="/projects" class="subnavLink">Dự án đã hoàn thành</a>
+                        <a href="/an-dam" class="subnavLink">Ăn dặm cho bé</a>
                     </li>
                 </ul>
                 <ul class="subNav" data-list="about">
@@ -221,19 +206,16 @@ $footer_email = (function_exists('get_field') && get_field('footer_email', $fron
                         <a href="/about" class="subnavTitle">Về chúng tôi</a>
                     </li>
                     <li>
-                        <a href="/about" class="subnavLink">Về chúng tôi</a>
+                        <a href="/doi-ngu" class="subnavLink">Đội ngũ Y Bác sĩ</a>
                     </li>
                     <li>
-                        <a href="/team" class="subnavLink">Đội ngũ</a>
+                        <a href="/blog" class="subnavLink">Tin tức &amp; Sự kiện</a>
                     </li>
                     <li>
-                        <a href="/blog" class="subnavLink">Blog</a>
+                        <a href="/cong-dong" class="subnavLink">Cộng đồng Mẹ bỉm sữa</a>
                     </li>
                     <li>
-                        <a href="/blenheim-in-the-community" class="subnavLink">Cộng đồng</a>
-                    </li>
-                    <li>
-                        <a href="/testimonials" class="subnavLink">Khách hàng nói gì</a>
+                        <a href="/testimonials" class="subnavLink">Cảm nhận khách hàng</a>
                     </li>
                     <li>
                         <a href="/contact" class="subnavLink">Liên hệ</a>

@@ -5,8 +5,8 @@
         <div class="full-grid">
             <?php
             $page_for_posts_id = get_option('page_for_posts');
-            $hero_title = (function_exists('get_field') && get_field('blog_title', $page_for_posts_id)) ? get_field('blog_title', $page_for_posts_id) : '<span class="font-italic">Blog của</span> chúng tôi';
-            $hero_desc = (function_exists('get_field') && get_field('blog_description', $page_for_posts_id)) ? get_field('blog_description', $page_for_posts_id) : 'Cập nhật những tin tức mới nhất về mua, bán, xây dựng nhà cửa và các thông tin từ chúng tôi.';
+            $hero_title = (function_exists('get_field') && get_field('blog_title', $page_for_posts_id)) ? get_field('blog_title', $page_for_posts_id) : '<span class="font-italic">Cẩm nang</span> Mẹ & Bé';
+            $hero_desc = (function_exists('get_field') && get_field('blog_description', $page_for_posts_id)) ? get_field('blog_description', $page_for_posts_id) : 'Chia sẻ những kiến thức hữu ích về chăm sóc mẹ sau sinh, dịch vụ tắm bé sơ sinh và kinh nghiệm nuôi con khoa học.';
             ?>
             <div class="col-span-full text-center pt-48 fade-in mobile:pt-28">
                 <h1 class=""><?php echo $hero_title; ?></h1>

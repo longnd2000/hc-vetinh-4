@@ -1,12 +1,12 @@
 <?php 
 $front_page_id = get_option('page_on_front') ? get_option('page_on_front') : get_option('page_for_posts');
-$header_phone = (function_exists('get_field') && get_field('header_phone', $front_page_id)) ? get_field('header_phone', $front_page_id) : '+44 (0)114 358 2020';
+$header_phone = (function_exists('get_field') && get_field('header_phone', $front_page_id)) ? get_field('header_phone', $front_page_id) : '1900 0387';
 $header_phone_clean = preg_replace('/[^0-9+]/', '', $header_phone);
-$footer_address = (function_exists('get_field') && get_field('footer_address', $front_page_id)) ? get_field('footer_address', $front_page_id) : 'Old Station Drive, Millhouses, Sheffield, S7 2PY';
-$footer_email = (function_exists('get_field') && get_field('footer_email', $front_page_id)) ? get_field('footer_email', $front_page_id) : 'enquiries@blenheim.co.uk';
-$social_facebook = (function_exists('get_field') && get_field('social_facebook', $front_page_id)) ? get_field('social_facebook', $front_page_id) : 'https://www.facebook.com/BlenheimProperties';
-$social_instagram = (function_exists('get_field') && get_field('social_instagram', $front_page_id)) ? get_field('social_instagram', $front_page_id) : 'https://instagram.com/blenheimhomesland/';
-$social_linkedin = (function_exists('get_field') && get_field('social_linkedin', $front_page_id)) ? get_field('social_linkedin', $front_page_id) : 'https://www.linkedin.com/company/blenheim-property/';
+$footer_address = (function_exists('get_field') && get_field('footer_address', $front_page_id)) ? get_field('footer_address', $front_page_id) : '20 Huy Du, Phường Từ Liêm, TP Hà Nội, Việt Nam.';
+$footer_email = (function_exists('get_field') && get_field('footer_email', $front_page_id)) ? get_field('footer_email', $front_page_id) : 'cskh@homegroups.vn';
+$social_facebook = (function_exists('get_field') && get_field('social_facebook', $front_page_id)) ? get_field('social_facebook', $front_page_id) : 'https://www.facebook.com/homecare';
+$social_instagram = (function_exists('get_field') && get_field('social_instagram', $front_page_id)) ? get_field('social_instagram', $front_page_id) : 'https://instagram.com/homecare';
+$social_linkedin = (function_exists('get_field') && get_field('social_linkedin', $front_page_id)) ? get_field('social_linkedin', $front_page_id) : 'https://www.linkedin.com/company/homecare';
 $footer_copyright = (function_exists('get_field') && get_field('footer_copyright', $front_page_id)) ? get_field('footer_copyright', $front_page_id) : '&copy; ' . date('Y') . ' ' . get_bloginfo('name') . ' - All rights reserved';
 
 $footer_col_1_info = (function_exists('get_field') && get_field('footer_col_1_info', $front_page_id)) ? get_field('footer_col_1_info', $front_page_id) : '<p class="font-bold mb-4 uppercase text-base">CÔNG TY TNHH CHĂM SÓC MẸ VÀ BÉ TẠI NHÀ HOME CARE</p><p class="mb-2">Địa chỉ: 20 Huy Du, Phường Từ Liêm, TP Hà Nội, Việt Nam.</p><p class="mb-2">Tổng đài hỗ trợ: 1900 0387</p><p class="mb-2">Hotline: 0973871376 - 0962131515</p><p class="mb-2">Email: cskh@homegroups.vn</p><p class="mb-2">Mã số doanh nghiệp: 0107375668 do Sở Kế hoạch &amp; Đầu tư TP Hà Nội cấp lần đầu ngày 29/03/2016</p>';
