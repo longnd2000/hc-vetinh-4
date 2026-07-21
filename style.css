@@ -572,7 +572,7 @@ video {
 }
 
 html {
-  font-family: "light", sans-serif;
+  
   font-style: normal;
   --tw-bg-opacity: 1;
   background-color: rgb(0 31 31 / var(--tw-bg-opacity, 1));
@@ -600,7 +600,7 @@ p {
 }
 
 em {
-  font-family: "title-italic", sans-serif;
+  
   font-weight: 300;
   font-style: normal;
 }
@@ -610,13 +610,13 @@ a {
 }
 
 .font-italic {
-  font-family: "title-italic", sans-serif;
+  
   font-weight: 300;
   font-style: normal;
 }
 
 .font-regular {
-  font-family: "text", sans-serif;
+  
   font-weight: 400;
   font-style: normal;
 }
@@ -726,7 +726,7 @@ h3,
 .h3,
 h4,
 .h4 {
-  font-family: "title", sans-serif;
+  
   font-weight: 300;
   font-style: normal;
 }
@@ -957,7 +957,7 @@ em {
 }
 
 .subtitle {
-  font-family: "text", sans-serif;
+  
   font-weight: 400;
   font-style: normal;
   /*14 18*/
@@ -986,7 +986,7 @@ em {
 }
 
 .subtitle-2 {
-  font-family: "text", sans-serif;
+  
   font-weight: 400;
   font-style: normal;
   /*10 14*/
@@ -1178,7 +1178,7 @@ html.lenis body {
 }
 
 .button {
-  font-family: "text", sans-serif;
+  
   font-weight: 400;
   font-style: normal;
   /*10 14*/
@@ -1437,7 +1437,7 @@ header.transparentHeader.button.clear-grey .menu li a:not(.button)::after {
 }
 
 .underlineLink {
-  font-family: "text", sans-serif;
+  
   font-weight: 400;
   font-style: normal;
   /*14 18*/
@@ -4172,7 +4172,7 @@ header.transparentHeader.button.clear-grey .menu li a:not(.button)::after {
 }
 
 .footerLists ul li a {
-  font-family: "text", sans-serif;
+  
   font-weight: 400;
   font-style: normal;
   opacity: 1;
@@ -4192,7 +4192,7 @@ header .menu li {
 }
 
 header .menu li a {
-  font-family: "text", sans-serif;
+  
   font-weight: 400;
   font-style: normal;
   /*10 14*/
@@ -4346,7 +4346,7 @@ header.darkHeader .menuToggle .menuI {
 }
 
 .navLink {
-  font-family: "title", sans-serif;
+  
   font-weight: 300;
   font-style: normal;
   /*h3 - 32 41*/
@@ -4386,7 +4386,7 @@ header.darkHeader .menuToggle .menuI {
 
 @media (max-width: 860px) {
   .navLink {
-    font-family: "title", sans-serif;
+    
     font-weight: 300;
     font-style: normal;
     /*h2 - 50 58*/
@@ -4508,7 +4508,7 @@ header.darkHeader .menuToggle .menuI {
 }
 
 .subnavTitle {
-  font-family: "text", sans-serif;
+  
   font-weight: 400;
   font-style: normal;
   /*14 18*/
@@ -4707,7 +4707,7 @@ input#show_sold:checked ~ .dot {
 }
 
 .tag {
-  font-family: "text", sans-serif;
+  
   font-weight: 400;
   font-style: normal;
   /*10 14*/
@@ -4782,7 +4782,7 @@ input#show_sold:checked ~ .dot {
 }
 
 .icon {
-  font-family: "text", sans-serif;
+  
   font-weight: 400;
   font-style: normal;
   /*14 18*/
@@ -4851,7 +4851,7 @@ input#show_sold:checked ~ .dot {
 
 .filterOverlay .filtersWrapper .label,
 .form .label {
-  font-family: "text", sans-serif;
+  
   font-weight: 400;
   font-style: normal;
   /*10 14*/
@@ -5044,7 +5044,7 @@ header.transparentHeader .form textarea .menu li a:not(.button)::after {
 .form.dark input[type="text"],
 .form.dark select,
 .form.dark textarea {
-  font-family: "text", sans-serif;
+  
   font-weight: 400;
   font-style: normal;
   border-style: none;
@@ -5187,7 +5187,7 @@ header.transparentHeader .form textarea .menu li a:not(.button)::after {
 }
 
 .rowListings .oneRow span {
-  font-family: "text", sans-serif;
+  
   font-weight: 400;
   font-style: normal;
   /*16 24*/
@@ -5242,7 +5242,7 @@ header.transparentHeader .form textarea .menu li a:not(.button)::after {
 }
 
 .popupClose {
-  font-family: "text", sans-serif;
+  
   font-weight: 400;
   font-style: normal;
   /*14 18*/
@@ -5533,13 +5533,13 @@ header.transparentHeader .form textarea .menu li a:not(.button)::after {
 
 @media (max-width: 860px) {
   .mobile\:h2 {
-    font-family: "title", sans-serif;
+    
     font-weight: 300;
     font-style: normal;
   }
 
   .mobile\:h3 {
-    font-family: "title", sans-serif;
+    
     font-weight: 300;
     font-style: normal;
   }
@@ -7009,3 +7009,5 @@ header.transparentHeader .form textarea .menu li a:not(.button)::after {
     padding-top: 1rem;
   }
 }
+
+body { font-family: 'Nunito', sans-serif !important; }
